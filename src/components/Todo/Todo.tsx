@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { Card, CardHeader, CardBody, CardFooter, Text, Flex, Box, Checkbox } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, Text, Flex, Box, Checkbox } from '@chakra-ui/react'
 import groupBy from 'lodash.groupby'
 import { Container, Input, Heading } from '@chakra-ui/react'
 
@@ -24,7 +24,7 @@ import {
   FormErrorMessage,
   FormHelperText,
 } from '@chakra-ui/react'
-import TodoCards from './TodoCards'
+
 
 import { IconButton } from '@chakra-ui/react'
 import { FaPlus, FaTrash, FaEdit, FaTasks } from 'react-icons/fa';
@@ -111,7 +111,7 @@ const TodoList: React.FC = () => {
             </FormControl>
             <FormControl>
               <FormLabel>Date</FormLabel>
-              <Input name="description" type='text' multiple={true} />
+              <Textarea name="description" />
             </FormControl>
             
           </ModalBody>
@@ -140,7 +140,7 @@ const TodoList: React.FC = () => {
           </CardHeader>
           <CardBody>
             {groupedTodos[date].map(todo => (
-              <Flex marginBottom={3} style={todo.complete ? {color: "green", textTransform:"capitalize", textDecorationLine:"line-through" }:{color:"black", textTransform:"capitalize"}}>
+              <Flex key={todo.id} marginBottom={3} style={todo.complete ? {color: "green", textTransform:"capitalize", textDecorationLine:"line-through" }:{color:"black", textTransform:"capitalize"}}>
                 <Checkbox margin={1} onChange={() => handleComplete(todo.id)}/>
               <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
                 <Box>
