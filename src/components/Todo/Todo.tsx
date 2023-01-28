@@ -17,17 +17,16 @@ import {
 } from '@chakra-ui/react'
 
 import {
-  Button,
+
   Textarea,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+ 
 } from '@chakra-ui/react'
 
 
 import { IconButton } from '@chakra-ui/react'
-import { FaPlus, FaTrash, FaEdit, FaTasks } from 'react-icons/fa';
+import { FaPlus, FaTrash, FaEdit } from 'react-icons/fa';
 import {Todo} from "../../types/Task"
 
 let today = new Date().toJSON().slice(0,10)
@@ -85,7 +84,6 @@ const TodoList: React.FC = () => {
   }
 
   return (
-
     <Container alignContent="center">
       <Flex margin={5}>
       <Heading> TODO - List</Heading>
