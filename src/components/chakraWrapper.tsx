@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import theme from "@/assets/theme";
+import theme from "../theme"
 
 type Props = {
   children: React.ReactNode;
